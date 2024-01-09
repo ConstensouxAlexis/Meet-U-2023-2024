@@ -1,0 +1,15 @@
+receptor = 6zsl.pdbqt
+ligand = ZINC001485529916_prepared.pdbqt
+
+center_x = -13.6826
+center_y = 11.0843
+center_z = -74.6564
+
+size_x = 80
+size_y = 80
+size_z = 80
+
+out = vina_out.pdbqt
+log = logs_vina.txt
+num_modes = 10
+energy_range = 4

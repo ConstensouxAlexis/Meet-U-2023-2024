@@ -21,7 +21,7 @@ def retrieve_nsp13(structure):
     """
 
     pdbl = PDBList()
-    pdbl.download_pdb_files([structure], pdir="NSP13", file_format="cif")
+    pdbl.download_pdb_files([structure], pdir="NSP13")
     # .ent is another valid extension for pdb files. BioPython uses this extension
     os.makedirs("data/NSP13", exist_ok=True)
     fpath = f"data/NSP13/{structure}.cif"

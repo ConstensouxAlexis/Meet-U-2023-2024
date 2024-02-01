@@ -25,28 +25,24 @@ def main():
         # Step 1: Download molecules
         st.write("Step 1: Downloading molecules...")
         start = time.time()
-        #retrieve_nsp13(structure_name)
-        time.sleep(1)
+        retrieve_nsp13(structure_name)
         st.success("Done for nsp13!")
-        #download_ligands(zinc_ids)
-        time.sleep(2)
+        download_ligands(zinc_ids)
         st.success("Done for ligands!")
         step_times["Download"] = time.time() - start
 
         # Step 2: Convert molecules
         st.write("Step 2: Converting molecules...")
         start = time.time()
-        #nsp13_pdb_to_pdbqt(structure_name)
-        #convert_ligands_to_pdbqt()
-        time.sleep(1)
+        nsp13_pdb_to_pdbqt(structure_name)
+        convert_ligands_to_pdbqt()
         st.success("Done!")
         step_times["Convertion"] = time.time() - start
 
         # Step 3: Detect pocket
         st.write("Step 3: Detecting pocket...")
         start = time.time()
-        #generate_pocket()
-        time.sleep(2)
+        generate_pocket()
         step_times["Pocket Detection"] = time.time() - start
         path = "C:/Users/alexi/OneDrive/Bureau/meetuStudent/Meet-U-2023-2024/code/data/pockets/6zsl.cif_predictions.csv"
         pockets = pd.read_csv(path, sep=",")
@@ -62,9 +58,7 @@ def main():
             # Step 4: Prepare ligands
             st.write("Step 4: Preparing ligands...")
             start = time.time()
-            #prepare_ligands()
-            time.sleep(4)
-            time.sleep(1)
+            prepare_ligands()
             st.success("Done!")
             step_times["Ligand preparation"] = time.time() - start
 
@@ -73,8 +67,7 @@ def main():
                 # Step 5: Run docking
                 start = time.time()
                 st.write(f"Step 5: Running docking with pocket number {pocket_number}")
-                #run_docking_for_all_ligands(pocket_number=pocket_number)
-                time.sleep(4)
+                run_docking_for_all_ligands(pocket_number=pocket_number)
                 step_times["Docking"] = time.time() - start
 
                 st.success("Docking pipeline completed successfully!")

@@ -1,0 +1,9 @@
+# Do not push any file on github
+*.sdf
+*.pdb
+*.ent
+*.pdbqt
+*.cif
+*.txt
+# Only push requirements.txt
+!requirements.txt
